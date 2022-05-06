@@ -1,0 +1,16 @@
+name = "u2f-service"
+type = "webpack"
+route = ""
+zone_id = "noman.land"
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+compatibility_date = "2022-05-04"
+account_id = "2d88ecd847f9997d7c5525f48bb286fd"
+
+# [dev]
+# local_protocol = "https"
+
+# [env.production]
+# zone_id = "noman.land"
+# route = "https://api.noman.land/u2f/v1/*"

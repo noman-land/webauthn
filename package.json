@@ -1,0 +1,19 @@
+{
+  "name": "u2f-service",
+  "private": true,
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Noman",
+  "license": "MIT",
+  "description": "Allows registration simply via U2F key.",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "@tsndr/cloudflare-worker-router": "^1.3.1",
+    "u2f": "^0.1.3"
+  }
+}
