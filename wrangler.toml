@@ -1,12 +1,11 @@
-name = "u2f-service"
+name = "u2f-qa"
 main = "src/index.js"
 workers_dev = true
 node_compat = true
 compatibility_date = "2022-05-31"
+route = { pattern = "https://api-qa.noman.land/u2f/v1/*", zone_name = "noman.land" }
+
+[env.prod]
+name = "u2f"
+node_compat = true
 route = { pattern = "https://api.noman.land/u2f/v1/*", zone_name = "noman.land" }
-
-# [dev]
-# local_protocol = "https"
-
-# [env.prod]
-# route = { pattern = "https://api.noman.land/u2f/v1/*", zone_name = "noman.land" }

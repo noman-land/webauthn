@@ -14,7 +14,7 @@ router
   .get('', () => new Response('Ok'))
   .get('/token', registrationChallengeHandler)
   .put('/token', registrationVerificationHandler)
-  .delete('/token', (_, res) => new Response({ status: 501 }));
+  .delete('/token', () => new Response({ status: 501 }));
 
 addEventListener('fetch', event => {
   event.respondWith(router.handle(event.request));
