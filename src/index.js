@@ -1,24 +1,20 @@
-import Router from '@tsndr/cloudflare-worker-router';
+import { Router } from 'itty-router';
 
 import {
   registrationChallengeHandler,
   registrationVerificationHandler,
 } from './handlers.js';
 
-const router = new Router();
+const router = Router({
+  base: '/u2f/v1',
+});
 
 router
-  .cors({
-    allowOrigin: 'https://noman.land',
-  })
-  .use((_, res, next) => {
-    res.headers.set('advanced-stealth', 'very');
-    next();
-  })
-  .get('', (_, res) => (res.body = 'OK'))
+  .cors()
+  .get('', () => new Response('Ok'))
   .get('/token', registrationChallengeHandler)
   .put('/token', registrationVerificationHandler)
-  .delete('/token', (_, res) => (res.status = 501));
+  .delete('/token', (_, res) => new Response({ status: 501 }));
 
 addEventListener('fetch', event => {
   event.respondWith(router.handle(event.request));
