@@ -1,11 +1,13 @@
-name = "u2f-qa"
-main = "src/index.js"
-workers_dev = true
-node_compat = true
+account_id = "2d88losecd847f9997d7c5525f48bb286fd"
 compatibility_date = "2022-05-31"
+main = "src/index.js"
+node_compat = true
+workers_dev = false
+
+[env.qa]
+name = "u2f-qa"
 route = { pattern = "https://api-qa.noman.land/u2f/v1/*", zone_name = "noman.land" }
 
 [env.prod]
 name = "u2f"
-node_compat = true
 route = { pattern = "https://api.noman.land/u2f/v1/*", zone_name = "noman.land" }
