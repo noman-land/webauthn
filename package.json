@@ -11,7 +11,7 @@
   "description": "Allows registration and authentication simply via U2F key.",
   "devDependencies": {
     "prettier": "^2.6.2",
-    "wrangler": "^3.13.1"
+    "wrangler": "^3.19.0"
   },
   "dependencies": {
     "itty-router": "^2.6.1",
