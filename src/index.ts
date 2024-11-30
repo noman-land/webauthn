@@ -15,7 +15,6 @@ import type { HonoTypes } from './types';
 //     'authorization, referer, origin, content-type'
 //   );
 //   response.headers.set('Access-Control-Max-Age', '3600');
-
 //   return response;
 // };
 
