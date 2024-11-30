@@ -1,14 +1,6 @@
 name: Deploy
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Choose an environment to deploy to:'
-        type: environment
-        required: true
-        default: 'qa'
-
   push:
     branches:
       - master
@@ -18,10 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - uses: actions/checkout@v3
-      - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy to Cloudflare Workers with Wrangler
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          preCommands: npm install
-          command: publish --env ${{ github.event.inputs.environment || 'qa'}} src/index.js
+          preCommands: |
+            npm install
+            cp wrangler-example.toml wrangler.toml
+            sed -i wrangler.toml -e 's/example\.com/${{ secrets.DOMAIN }}/g'
+          command: deploy

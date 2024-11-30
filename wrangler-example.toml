@@ -1,0 +1,11 @@
+#:schema node_modules/wrangler/config-schema.json
+
+name = "u2f"
+main = "src/index.ts"
+compatibility_date = "2024-11-29"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+routes = [
+  { pattern = "https://api.example.com/u2f/v1/*", zone_name = "example.com" },
+]
