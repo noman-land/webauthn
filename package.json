@@ -4,9 +4,10 @@
   "version": "0.2.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "npx wrangler dev --local-protocol https --upstream-protocol https",
+    "dev": "wrangler dev --port=9042 --local-protocol https --upstream-protocol https",
     "start": "npm run dev",
-    "deploy": "npx wrangler deploy"
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "author": "Noman",
   "license": "MIT",
