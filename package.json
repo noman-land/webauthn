@@ -1,0 +1,26 @@
+{
+  "name": "u2f-service",
+  "private": true,
+  "version": "0.2.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev --port=9042 --local-protocol https --upstream-protocol https",
+    "start": "npm run dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "author": "Noman",
+  "license": "MIT",
+  "description": "Allows registration and authentication simply via U2F key.",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@types/node": "^22.10.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.91.0"
+  },
+  "dependencies": {
+    "hono": "^4.6.12",
+    "u2f": "^0.1.3"
+  }
+}
