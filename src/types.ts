@@ -18,14 +18,12 @@ export interface AuthenticationChecks {
   verbose?: boolean;
 }
 
-interface ChallengeBody {
+export interface RegistrationBody {
   sessionId: string;
-}
-
-export interface RegistrationBody extends ChallengeBody {
   registration: RegistrationJSON;
 }
 
-export interface AuthenticationBody extends ChallengeBody {
+export interface AuthenticationBody {
+  sessionId: string;
   authentication: AuthenticationJSON;
 }
