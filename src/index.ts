@@ -90,8 +90,12 @@ export default new Hono<HonoTypes>({ strict: false })
     };
 
     try {
-      await server.verifyAuthentication(body.authentication, user.credential, expected);
-      return new Response(null, { status: 204 });
+      const authentication = await server.verifyAuthentication(
+        body.authentication,
+        user.credential,
+        expected,
+      );
+      return new JsonResponse(authentication);
     } catch (e: any) {
       return new Response(`Authentication failed: ${e.message}`, { status: 400 });
     }
