@@ -1,16 +1,13 @@
-export const randomBytes = (n: number) =>
-  [...Array(n)]
-    .map(() => Math.floor(Math.random() * Math.pow(2, 8)).toString(16))
-    .join('');
-
 export class JsonResponse extends Response {
-  constructor(body, ...rest) {
-    super(body, ...rest)
-    return new Response(JSON.stringify(body), {
-      ...rest,
+  constructor(body: Record<string, any>, options?: ResponseInit) {
+    const stringBody = JSON.stringify(body);
+    super(stringBody, options);
+    return new Response(stringBody, {
+      ...options,
       headers: {
-        'content-type': 'application/json'
-      }
+        ...options?.headers,
+        'content-type': 'application/json',
+      },
     });
   }
 }
