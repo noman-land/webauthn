@@ -1,13 +1,13 @@
 {
-  "name": "u2f-service",
+  "name": "webauthn",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "wrangler dev --port=9042 --local-protocol https --upstream-protocol https",
+    "dev": "wrangler dev --port=9042 --local-protocol http --upstream-protocol https",
     "start": "npm run dev",
     "deploy": "wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "types": "wrangler types"
   },
   "author": "Noman",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "wrangler": "^3.91.0"
   },
   "dependencies": {
-    "hono": "^4.6.12",
-    "u2f": "^0.1.3"
+    "@passwordless-id/webauthn": "^2.1.2",
+    "hono": "^4.6.12"
   }
 }
