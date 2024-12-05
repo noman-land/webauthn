@@ -19,5 +19,5 @@ jobs:
           preCommands: |
             npm install
             cp wrangler-example.toml wrangler.toml
-            sed -i wrangler.toml -e 's/example\.com/${{ secrets.DOMAIN }}/g'
+            sed -i wrangler.toml -e 's/example1\.com/${{ secrets.DOMAIN1 }}/g' -e 's/example2\.com/${{ secrets.DOMAIN2 }}/g'
           command: deploy

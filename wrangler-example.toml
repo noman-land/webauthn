@@ -7,7 +7,8 @@ compatibility_flags = ["nodejs_compat"]
 workers_dev = false
 
 routes = [
-  { pattern = "https://api.example.com/webauthn/v1/*", zone_name = "example.com" },
+  { pattern = "https://api.example1.com/webauthn/v1/*", zone_name = "example1.com" },
+  { pattern = "https://api.example2.com/webauthn/v1/*", zone_name = "example2.com" },
 ]
 
 kv_namespaces = [
