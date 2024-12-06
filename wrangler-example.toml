@@ -2,16 +2,19 @@
 
 name = "webauthn"
 main = "src/index.ts"
-compatibility_date = "2024-11-29"
+compatibility_date = "2024-12-05"
 compatibility_flags = ["nodejs_compat"]
 workers_dev = false
 
 routes = [
   { pattern = "https://api.example1.com/webauthn/v1/*", zone_name = "example1.com" },
-  { pattern = "https://api.example2.com/webauthn/v1/*", zone_name = "example2.com" },
+  # { pattern = "https://api.example2.com/webauthn/v1/*", zone_name = "example2.com" },
 ]
 
 kv_namespaces = [
   { binding = "CHALLENGES", id = "507f382218f445a984c0570a09e59565", preview_id = "507f382218f445a984c0570a09e59565" },
   { binding = "REGISTRATIONS", id = "400f0f96d518447ca791dc136ceb1c46", preview_id = "400f0f96d518447ca791dc136ceb1c46" },
 ]
+
+[observability]
+enabled = true
