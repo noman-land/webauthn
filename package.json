@@ -11,7 +11,7 @@
   },
   "author": "Noman",
   "license": "MIT",
-  "description": "Allows registration and authentication simply via U2F key.",
+  "description": "Allows registration and authentication simply via webauthn.",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241127.0",
     "@types/node": "^22.10.1",

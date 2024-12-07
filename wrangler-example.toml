@@ -9,6 +9,9 @@ workers_dev = false
 routes = [
   { pattern = "https://api.example1.com/webauthn/v1/*", zone_name = "example1.com" },
   { pattern = "https://api.example2.com/webauthn/v1/*", zone_name = "example2.com" },
+  { pattern = "https://api.example3.com/webauthn/v1/*", zone_name = "example3.com" },
+  { pattern = "https://api.example4.com/webauthn/v1/*", zone_name = "example4.com" },
+  { pattern = "https://api.example5.com/webauthn/v1/*", zone_name = "example5.com" },
 ]
 
 kv_namespaces = [
